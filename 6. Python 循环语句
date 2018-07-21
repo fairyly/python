@@ -1,5 +1,10 @@
 # Python 循环语句
 
+while 语句时还有另外两个重要的命令 continue，break 来跳过循环，
+
+continue 用于跳过该次循环，  
+break 则是用于退出循环  
+
 ```
 while 判断条件：
     执行语句……
