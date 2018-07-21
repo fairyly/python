@@ -9,3 +9,11 @@ break 则是用于退出循环
 while 判断条件：
     执行语句……
 ```
+
+
+## for 
+
+```
+for iterating_var in sequence:
+   statements(s)
+```
