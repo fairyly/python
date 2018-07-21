@@ -17,3 +17,23 @@ while 判断条件：
 for iterating_var in sequence:
    statements(s)
 ```
+
+
+# 循环嵌套
+
+- Python for 循环嵌套语法：
+```
+for iterating_var in sequence:
+   for iterating_var in sequence:
+      statements(s)
+   statements(s)
+```
+
+- Python while 循环嵌套语法：
+
+```
+while expression:
+   while expression:
+      statement(s)
+   statement(s)
+```
