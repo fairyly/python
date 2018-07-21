@@ -15,3 +15,16 @@ Python中默认的编码格式是 ASCII 格式，在没修改编码格式时无�
  
 print "你好，世界";
 ```
+
+
+我文件中添加了可是输出的不是代码中中文
+
+## Python设置默认编码为UTF-8
+
+
+
+
+
+
+## 问题
+- https://blog.ernest.me/post/python-setdefaultencoding-unicode-bytes
