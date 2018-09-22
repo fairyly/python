@@ -14,4 +14,5 @@ Django 框架的核心组件有：
 
 ## 参考
 - https://github.com/django/django
+- https://www.itcodemonkey.com/category/OpenSourceTop/
 
