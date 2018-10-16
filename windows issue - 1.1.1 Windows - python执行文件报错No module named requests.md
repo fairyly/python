@@ -16,4 +16,5 @@ pip list 显示安装
 
 ## 参考
 - [ImportError: No module named requests](https://stackoverflow.com/questions/17309288/importerror-no-module-named-requests)
+- [Pycharm一直报No module named 'requests'错解决办法](https://blog.csdn.net/u012106306/article/details/80760744)
 
