@@ -14,4 +14,4 @@ pip install 安装库的名
 - On mac osx and windows, after downloading the source zip, uncompress it and from the termiminal/cmd run `python setup.py install` from the uncompressed dir.
 
 ## 参考
-- 
+- [pypi](https://pypi.org/)
