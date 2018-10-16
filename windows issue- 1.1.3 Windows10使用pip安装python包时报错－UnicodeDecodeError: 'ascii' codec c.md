@@ -1,5 +1,7 @@
 # Windows10使用pip安装python包时报错－UnicodeDecodeError: 'ascii' codec c
 
+先换源了还是报错，
+
 看到 V2EX 中的
 
 >用以下两种方法试试
