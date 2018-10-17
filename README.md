@@ -3,6 +3,8 @@ python study
 
 
 ## 参考
+- [awesome-python](https://github.com/vinta/awesome-python)
+- [Python资源大全中文版](https://github.com/jobbole/awesome-python-cn)
 - [Python3网络爬虫实战](https://github.com/Jack-Cherish/python-spider)
 - [Python入门网络爬虫之精华版](https://github.com/lining0806/PythonSpiderNotes)
 - [爬虫集合](https://github.com/facert/awesome-spider)
