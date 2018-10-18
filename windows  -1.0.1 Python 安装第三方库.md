@@ -7,6 +7,12 @@ pip install 安装库的名
 ```
 
 
+- 安装依赖:
+```
+pip install -r requirements.txt
+```
+
+
 ## From Source (Universal)
 
 - For any missing library, the source is usually available at https://pypi.python.org/pypi/. You can download requests here: https://pypi.python.org/pypi/requests
