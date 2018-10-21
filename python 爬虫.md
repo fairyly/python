@@ -68,6 +68,24 @@
   - GitHub： https://github.com/tesseract-ocr/tesseract
   - docs: https://github.com/tesseract-ocr/tesseract/wiki
   - downloads: https://github.com/tesseract-ocr/tesseract/wiki/Downloads
+  
+  
+  
+## 4.存储库
+
+- 1.PyMySQL: 如果想将数据存储到 MySQL， 就需要借助 PyMySQL，
+  - GitHub：https://github.com/PyMySQL/PyMySQL
+  - dochttps://pymysql.readthedocs.io/en/latest/
+  - 验证：import pymysql
+    - pymysql.VERSION //如果输出版本，就说明安装成功
+
+- 2.PyMongo:和MongoDB 交互，就需要 PyMongo
+  - GitHub： https://github.com/mongodb/mongo-python-driver
+  - docs: http://api.mongodb.com/python/
+
+- 3.redis-py: 使用 redis 需要 redis-py 库
+  - GitHub：https://github.com/andymccurdy/redis-py
+  - docs: https://redis-py.readthedocs.io/en/latest/
 
 ## 爬虫框架
 - [scrapy](https://github.com/scrapy/scrapy)
