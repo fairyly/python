@@ -37,6 +37,7 @@
 - PhantomJS
   - website: http://phantomjs.org/ 
   - doc: http://phantomjs.org/quick-start.html
+  - api: http://phantomjs.org/api/
   - download: http://phantomjs.org/download.html 
   - github: https://github.com/ariya/phantomjs/
 
