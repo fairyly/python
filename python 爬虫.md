@@ -87,6 +87,9 @@
   - GitHub：https://github.com/andymccurdy/redis-py
   - docs: https://redis-py.readthedocs.io/en/latest/
 
+## 5.web库安装
+- 1.Flask 安装：
+
 ## 爬虫框架
 - [scrapy](https://github.com/scrapy/scrapy)
 - [pyspider](https://github.com/binux/pyspider)
