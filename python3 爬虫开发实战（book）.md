@@ -102,6 +102,9 @@
   - GitHub：https://github.com/tornadoweb/tornado
   - docs: http://www.tornadoweb.org/en/stable/
 
+- 3.django
+  - GitHub：https://github.com/django/django
+
 
 ## 6.APP 爬取相关库安装
 - 1.charles
