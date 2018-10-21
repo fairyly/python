@@ -12,7 +12,7 @@
 
 
 ## 请求库安装
-- [requests：python http 请求库](https://github.com/requests/requests)
+- [requests：python http 请求库(阻塞式的)](https://github.com/requests/requests)
   - doc: http://docs.python-requests.org/en/master/
 
 
@@ -40,6 +40,9 @@
   - api: http://phantomjs.org/api/
   - download: http://phantomjs.org/download.html 
   - github: https://github.com/ariya/phantomjs/
+
+- [aiohttp: 异步的web服务库](https://github.com/aio-libs/aiohttp)
+  - [docs](https://docs.aiohttp.org)
 
 ## 爬虫框架
 - [scrapy](https://github.com/scrapy/scrapy)
