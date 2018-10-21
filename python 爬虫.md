@@ -11,7 +11,7 @@
 - 爬虫框架
 
 
-## 请求库安装
+## 1.请求库安装
 - [requests：python http 请求库(阻塞式的)](https://github.com/requests/requests)
   - doc: http://docs.python-requests.org/en/master/
 
@@ -43,6 +43,14 @@
 
 - [aiohttp: 异步的web服务库](https://github.com/aio-libs/aiohttp)
   - [docs](https://docs.aiohttp.org)
+
+## 2.解析库安装
+- [lxml:python 解析库，支持 html 和 xml,支持 xpath 解析方式](https://github.com/lxml/lxml)
+  - pip 安装方式： pip3 install lxml
+  - wheel 安装方式： 需要先安装 wheel, pip3 install wheel, 下载 .whl 文件，然后 pip3 install lxml-3.8.0-cp36_amd64.whl
+  - 验证安装
+    - python3
+    - >>>import lxml  //如果没有报错，就说明库已经安装好了 
 
 ## 爬虫框架
 - [scrapy](https://github.com/scrapy/scrapy)
