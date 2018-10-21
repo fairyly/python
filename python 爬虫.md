@@ -68,7 +68,11 @@
   - GitHub： https://github.com/tesseract-ocr/tesseract
   - docs: https://github.com/tesseract-ocr/tesseract/wiki
   - downloads: https://github.com/tesseract-ocr/tesseract/wiki/Downloads
-  
+
+## 数据库安装
+- 1.MySQL:
+- 2.MongoDB：
+- 3.redis：
   
   
 ## 4.存储库
@@ -98,7 +102,14 @@
   - GitHub：https://github.com/tornadoweb/tornado
   - docs: http://www.tornadoweb.org/en/stable/
 
-## 爬虫框架
+
+## 6.APP 爬取相关库安装
+- 1.charles
+- 2.mitmproxy
+- 3.Appium
+
+
+## 7.爬虫框架
 - [scrapy](https://github.com/scrapy/scrapy)
 - [pyspider](https://github.com/binux/pyspider)
 - [webmagic](https://github.com/code4craft/webmagic)
@@ -106,6 +117,13 @@
 - [scrapy-splash](https://github.com/scrapy-plugins/scrapy-splash)
 
 
+## 部署相关的库安装
+- 1.Docker 安装
+- 2.Scrapyd 安装：部署和运行 Scrapy 项目的工具，基本都是使用 Linux 主机
+- 3.Scrapyd-Client:
+- 4.Scrapyd-API:
+- 5.Scrapyrt:
+- 6.Gerapy:
 
 
 
