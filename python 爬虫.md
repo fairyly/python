@@ -29,6 +29,7 @@
   - 驱动浏览器完成相应的操作
   - [chromedriver 驱动下载地址](http://chromedriver.storage.googleapis.com/index.html)
   - [chrome所有版本驱动](http://npm.taobao.org/mirrors/chromedriver/)
+  - 环境变量配置：1.将 chromedriver.exe文件拖到 python 到 Script 目录下，也可以单独将所在路径配置到环境变量
 
 - 如果驱动火狐浏览器就需要 GeckoDriver 安装
   - github: https://github.com/mozilla/geckodriver
@@ -40,6 +41,7 @@
   - api: http://phantomjs.org/api/
   - download: http://phantomjs.org/download.html 
   - github: https://github.com/ariya/phantomjs/
+  - 环境变量配置：1.将 bin 目录中 phantomjs.exe文件拖到 python 到 Script 目录下，也可以单独将bin所在路径配置到环境变量
 
 - [aiohttp: 异步的web服务库](https://github.com/aio-libs/aiohttp)
   - [docs](https://docs.aiohttp.org)
@@ -51,6 +53,21 @@
   - 验证安装
     - python3
     - >>>import lxml  //如果没有报错，就说明库已经安装好了 
+
+- beautiful soup: html或 xml 解析器
+  - docs(中文文档): https://beautifulsoup.readthedocs.io/zh_CN/v4.4.0/
+  - 官方网站: http://www.crummy.com/software/BeautifulSoup/
+  - 原版文档: http://www.crummy.com/software/BeautifulSoup/bs4/doc/
+
+- pyquery: 网页解析工具，提供和 jQuery 类似的语法来解析HTML文档，支持css 选择器
+  - github: https://github.com/gawel/pyquery
+  - docs: https://pyquery.readthedocs.io/en/latest/
+
+- tesserocr :python OCR 识别库，OCR(Optical Character Recognition，光学字符识别)，核心：tesseract,安装之前先安装 tesseract
+  - github: https://github.com/sirfz/tesserocr
+  - GitHub： https://github.com/tesseract-ocr/tesseract
+  - docs: https://github.com/tesseract-ocr/tesseract/wiki
+  - downloads: https://github.com/tesseract-ocr/tesseract/wiki/Downloads
 
 ## 爬虫框架
 - [scrapy](https://github.com/scrapy/scrapy)
