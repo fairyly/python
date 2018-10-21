@@ -88,7 +88,15 @@
   - docs: https://redis-py.readthedocs.io/en/latest/
 
 ## 5.web库安装
-- 1.Flask 安装：
+- 1.Flask 安装：web 服务程序，主要做一些 API 服务，
+  - github: https://github.com/pallets/flask
+  - Website: https://www.palletsprojects.com/p/flask/
+  - docs: https://palletsprojects.com/p/flask/ 
+  
+  
+- 2.Tornado: 支持异步的 web 框架，使用 非阻塞 I/O流，支持上千万的开放连接，
+  - GitHub：https://github.com/tornadoweb/tornado
+  - docs: http://www.tornadoweb.org/en/stable/
 
 ## 爬虫框架
 - [scrapy](https://github.com/scrapy/scrapy)
