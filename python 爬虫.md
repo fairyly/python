@@ -11,7 +11,7 @@
 - 爬虫框架
 
 
-## 请求库
+## 请求库安装
 - [requests：python http 请求库](https://github.com/requests/requests)
   - doc: http://docs.python-requests.org/en/master/
 
@@ -33,7 +33,12 @@
 - 如果驱动火狐浏览器就需要 GeckoDriver 安装
   - github: https://github.com/mozilla/geckodriver
   - download: https://github.com/mozilla/geckodriver/releases
-  
+ 
+- PhantomJS
+  - website: http://phantomjs.org/ 
+  - doc: http://phantomjs.org/quick-start.html
+  - download: http://phantomjs.org/download.html 
+  - github: https://github.com/ariya/phantomjs/
 
 ## 爬虫框架
 - [scrapy](https://github.com/scrapy/scrapy)
