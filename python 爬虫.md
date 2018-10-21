@@ -23,7 +23,7 @@
   - PyPI:	https://pypi.org/project/selenium/
 
 - ChromDriver 安装
->从ChromeDiver对应表中可以推出：Driver为奇数时，对应的Chrome版本为 偶数~偶数+2；Driver为偶数时，对应的Chrome版本为 奇数~奇数+2；
+>从ChromeDiver对应表中可以推出：Driver为奇数时，对应的Chrome版本为 `偶数~偶数+2`；Driver为偶数时，对应的Chrome版本为 `奇数~奇数+2`；
 所以就可以以这种对应关系推断出自己版本对应的Driver。
 
   - 驱动浏览器完成相应的操作
