@@ -36,6 +36,8 @@ pip3 install requests
 
 会报错，需要指定版本
 
+python2 -m pip install xxx
+
 python3 -m pip install requests
 ```
 
