@@ -67,13 +67,15 @@
   - github: https://github.com/sirfz/tesserocr
   - GitHub： https://github.com/tesseract-ocr/tesseract
   - docs: https://github.com/tesseract-ocr/tesseract/wiki
-  - downloads: https://github.com/tesseract-ocr/tesseract/wiki/Downloads
+  - downloads: https://digi.bib.uni-mannheim.de/tesseract/
 
 ## 数据库安装
 - 1.MySQL:
   - download: https://www.mysql.com/downloads/
+  - windows-download: https://dev.mysql.com/downloads/installer/
 - 2.MongoDB：
 - 3.redis：
+  - GitHub：https://github.com/antirez/redis
   
   
 ## 4.存储库
