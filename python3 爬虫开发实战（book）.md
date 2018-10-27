@@ -131,6 +131,7 @@
   - pywin32: https://sourceforge.net/projects/pywin32/files/pywin32/
   - 安装好依赖后 在安装 `python3 -m pip install Scrapy`
 - [pyspider](https://github.com/binux/pyspider)
+  - 依赖 phantomjs,需要先安装 
 - [webmagic](https://github.com/code4craft/webmagic)
 - [scrapy-redis](https://github.com/rmax/scrapy-redis)
 - [scrapy-splash](https://github.com/scrapy-plugins/scrapy-splash)
