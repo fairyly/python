@@ -58,6 +58,7 @@
   - docs(中文文档): https://beautifulsoup.readthedocs.io/zh_CN/v4.4.0/
   - 官方网站: http://www.crummy.com/software/BeautifulSoup/
   - 原版文档: http://www.crummy.com/software/BeautifulSoup/bs4/doc/
+  - 虽然安装的名是 `BeautifulSoup4` ,但是引入的 `bs4`
 
 - pyquery: 网页解析工具，提供和 jQuery 类似的语法来解析HTML文档，支持css 选择器
   - github: https://github.com/gawel/pyquery
@@ -93,6 +94,13 @@
 - 3.redis-py: 使用 redis 需要 redis-py 库
   - GitHub：https://github.com/andymccurdy/redis-py
   - docs: https://redis-py.readthedocs.io/en/latest/
+  - redisdump: 用于 redis 导入、导出的工具，基于 ruby 实现的，需要先安装 ruby 
+    - github: https://github.com/delano/redis-dump
+    - docs: http://delanotes.com/redis-dump/
+    - ruby-download: http://www.ruby-lang.org/zh_cn/documentation/installation/  
+      https://rubyinstaller.org/downloads/
+    - 安装后就可以使用 gem 安装，
+    - `gem install redis-dump`
 
 ## 5.web库安装
 - 1.Flask 安装：web 服务程序，主要做一些 API 服务，
