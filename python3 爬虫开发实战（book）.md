@@ -132,13 +132,21 @@
   - 安装好依赖后 在安装 `python3 -m pip install Scrapy`
 - [pyspider](https://github.com/binux/pyspider)
   - 依赖 phantomjs,需要先安装 
+  - install: python3 -m pip install pyspider
 - [webmagic](https://github.com/code4craft/webmagic)
 - [scrapy-redis](https://github.com/rmax/scrapy-redis)
+  - install: python3 -m pip install scrapy-redis
 - [scrapy-splash](https://github.com/scrapy-plugins/scrapy-splash)
+  - install: python3 -m pip install scrapy-splash
 
 
 ## 部署相关的库安装
 - 1.Docker 安装
+  - website: https://www.docker.com/
+  - GitHub：https://github.com/docker
+  - 中文社区： http://www.docker.org.cn/
+  - 中文教程： http://www.runoob.com/docker/docker-tutorial.html
+  - windows download: https://docs.docker.com/docker-for-windows/
 - 2.Scrapyd 安装：部署和运行 Scrapy 项目的工具，基本都是使用 Linux 主机
 - 3.Scrapyd-Client:
 - 4.Scrapyd-API:
