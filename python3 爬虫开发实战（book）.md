@@ -125,6 +125,11 @@
 
 ## 7.爬虫框架
 - [scrapy](https://github.com/scrapy/scrapy)
+  - 需要先安装 lxml,pyOpenSSL,Twisted,pyWin32
+  - twisted: https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted
+    - install: python3 -m pip install Twisted-18.9.0-cp37-cp37m-win_amd64.whl
+  - pywin32: https://sourceforge.net/projects/pywin32/files/pywin32/
+  - 安装好依赖后 在安装 `python3 -m pip install Scrapy`
 - [pyspider](https://github.com/binux/pyspider)
 - [webmagic](https://github.com/code4craft/webmagic)
 - [scrapy-redis](https://github.com/rmax/scrapy-redis)
