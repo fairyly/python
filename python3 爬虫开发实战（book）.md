@@ -71,6 +71,7 @@
 
 ## 数据库安装
 - 1.MySQL:
+  - download: https://www.mysql.com/downloads/
 - 2.MongoDB：
 - 3.redis：
   
