@@ -95,13 +95,16 @@ print(page)
 ```
 - **高级用法**
   - Handler: 继承这个 baseHandler 类，比较常见的类：
+    - ProxyHandler：为请求设置代理
+    - HTTPCookieProcessor：处理 HTTP 请求中的 Cookies
+    - HTTPDefaultErrorHandler：处理 HTTP 响应错误。
+    - HTTPRedirectHandler：处理 HTTP 重定向。
+    - HTTPPasswordMgr：用于管理密码，它维护了用户名密码的表。
+    - HTTPBasicAuthHandler：用于登录认证，一般和 HTTPPasswordMgr 结合使用。
+  - 使用代理: ProxyHandler
 
-ProxyHandler：为请求设置代理
-HTTPCookieProcessor：处理 HTTP 请求中的 Cookies
-HTTPDefaultErrorHandler：处理 HTTP 响应错误。
-HTTPRedirectHandler：处理 HTTP 重定向。
-HTTPPasswordMgr：用于管理密码，它维护了用户名密码的表。
-HTTPBasicAuthHandler：用于登录认证，一般和 HTTPPasswordMgr 结合使用。
+  - Cookie:
+   
 
 
 ## 2.异常处理
@@ -117,3 +120,5 @@ HTTPBasicAuthHandler：用于登录认证，一般和 HTTPPasswordMgr 结合使�
 ## 参考
 - [python3 网络爬虫开发实战]()
 - [urllib 模块的使用](https://www.cnblogs.com/Lands-ljk/p/5447127.html)
+- [详解 python3 urllib](https://www.jianshu.com/p/2e190438bd9c)
+- [python3 urllib 爬虫 Handler 处理器PRoxyHandlr 处理器（代理设置）](https://blog.csdn.net/yangxiaodong88/article/details/80759086)
