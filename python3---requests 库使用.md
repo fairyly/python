@@ -171,7 +171,8 @@ import requests
 40     print(r3.text)
 ```
 
-## 抓取猫眼电影排行
+## 抓取猫眼电影排行：
+- [完整 code](https://github.com/Python3WebSpider/MaoYan/blob/master/spider.py)
 
 ```
 import requests
