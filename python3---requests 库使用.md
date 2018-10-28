@@ -49,6 +49,17 @@ r = requests.post('https://api.github.com/some/endpoint', data=data, headers=hea
 print(r.text)
 ```
 
+- 发送你的cookies到服务器，可以使用 cookies 参数
+```
+import requests
+ 
+url = 'http://httpbin.org/cookies'
+cookies = {'testCookies_1': 'Hello_Python3', 'testCookies_2': 'Hello_Requests'}
+# 在Cookie Version 0中规定空格、方括号、圆括号、等于号、逗号、双引号、斜杠、问号、@，冒号，分号等特殊符号都不能作为Cookie的内容。
+r = requests.get(url, cookies=cookies)
+print(r.json())
+```
+
 - 代理
 
 ```
@@ -81,5 +92,108 @@ r = requests.get('https://httpbin.org/hidden-basic-auth/user/passwd', auth=HTTPB
 print(r.json())
 ```
 
+
+## requests模块抓取网页源码并保存到文件示例
+
+这是一个基本的文件保存操作，但这里有几个值得注意的问题：
+
+1.安装requests包，命令行输入pip install requests即可自动安装。很多人推荐使用requests，自带的urllib.request也可以抓取网页源码
+
+2.open方法encoding参数设为utf-8，否则保存的文件会出现乱码。
+
+3.如果直接在cmd中输出抓取的内容，会提示各种编码错误，所以保存到文件查看。
+
+4.with open方法是更好的写法，可以自动操作完毕后释放资源。
+
+```
+#! /urs/bin/python3
+import requests
+
+'''requests模块抓取网页源码并保存到文件示例'''
+html = requests.get("http://www.baidu.com")
+with open('test.txt', 'w', encoding='utf-8') as f:
+    f.write(html.text)
+    
+'''读取一个txt文件，每次读取一行，并保存到另一个txt文件中的示例'''
+ff = open('testt.txt', 'w', encoding='utf-8')
+with open('test.txt', encoding="utf-8") as f:
+    for line in f:
+        ff.write(line)
+        ff.close()
+
+因为在命令行中打印每次读取一行的数据，中文会出现编码错误，所以每次读取一行并保存到另一个文件，这样来测试读取是否正常。
+（注意open的时候制定encoding编码方式）
+```
+
+
+## requests模拟登陆GitHub
+
+```
+import requests
+ 2 from bs4 import BeautifulSoup
+ 3 
+ 4 
+ 5 def login_github():
+ 6     """
+ 7     通过requests模块模拟浏览器登陆GitHub
+ 8     :return: 
+ 9     """
+10     # 获取csrf_token
+11     r1 = requests.get('https://github.com/login')   # 获得get请求的对象
+12     s1 = BeautifulSoup(r1.text, 'html.parser')      # 使用bs4解析HTML对象
+13     token = s1.find('input', attrs={'name': 'authenticity_token'}).get('value')     # 获取登陆授权码，即csrf_token
+14     get_cookies = r1.cookies.get_dict()     # 获取get请求的cookies，post请求时必须携带
+15     
+16     # 发送post登陆请求
+17     '''
+18     post登陆参数
+19     commit    Sign+in
+20     utf8    ✓
+21     authenticity_token    E961jQMIyC9NPwL54YPj70gv2hbXWJ…fTUd+e4lT5RAizKbfzQo4eRHsfg==
+22     login    JackUpDown（用户名）
+23     password    **********（密码）
+24     '''
+25     r2 = requests.post(
+26         'https://github.com/session',
+27         data={
+28             'commit': 'Sign+in',
+29             'utf8': '✓',
+30             'authenticity_token': token,
+31             'login': 'JackUpDown',
+32             'password': '**********'
+33         },
+34         cookies=get_cookies     # 携带get请求的cookies
+35                        )
+36     login_cookies = r2.cookies.get_dict()   # 获得登陆成功的cookies，携带此cookies就可以访问任意GitHub页面
+37 
+38     # 携带post cookies跳转任意页面
+39     r3 = requests.get('https://github.com/settings/emails', cookies=login_cookies)
+40     print(r3.text)
+```
+
+## 抓取猫眼电影排行
+
+```
+import requests
+ 
+def get_one_page(url):
+    headers ={
+        'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.170 Safari/537.36',
+        }
+    response = requests.get(url,headers = headers)
+    if response.status_code ==200:
+        return response.text
+    return None
+ 
+def main():
+    url = 'http://maoyan.com/board/4'
+    html = get_one_page(url)
+    print(html)
+    
+main()
+
+```
+
 ## 参考
+- [python-requests 快速上手](http://cn.python-requests.org/zh_CN/latest/user/quickstart.html)
 - [python3_requests模块详解](https://www.cnblogs.com/ranxf/p/7808537.html)
