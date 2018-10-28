@@ -101,18 +101,211 @@ print(page)
     - HTTPRedirectHandler：处理 HTTP 重定向。
     - HTTPPasswordMgr：用于管理密码，它维护了用户名密码的表。
     - HTTPBasicAuthHandler：用于登录认证，一般和 HTTPPasswordMgr 结合使用。
+  - 认证登录
+    - HTTPPasswordMgrWithDefaultRealm
+    - HTTPBasicAuthHandler
+    - build_opener
+    ```
+    import urllib.request
+
+    url = "http://tieba.baidu.com/"
+    user = 'user'
+    password = 'password'
+    pwdmgr = urllib.request.HTTPPasswordMgrWithDefaultRealm()
+    pwdmgr.add_password(None，url ，user ，password)
+
+    auth_handler = urllib.request.HTTPBasicAuthHandler(pwdmgr)
+    opener = urllib.request.build_opener(auth_handler)
+    response = opener.open(url)
+    print(response.read().decode('utf-8'))
+    ```
   - 使用代理: ProxyHandler
+    ```
+    import urllib.request
+
+    url = "http://tieba.baidu.com/"
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    }
+
+    proxy_handler = urllib.request.ProxyHandler({
+        'http': 'web-proxy.oa.com:8080',
+        'https': 'web-proxy.oa.com:8080'
+    })
+    opener = urllib.request.build_opener(proxy_handler)
+    urllib.request.install_opener(opener)
+
+    request = urllib.request.Request(url=url, headers=headers)
+    response = urllib.request.urlopen(request)
+    print(response.read().decode('utf-8'))
+    ```
 
   - Cookie:
-   
+    - http.cookiejar
+    - urllib.request
+    ```
+    import http.cookiejar
+    import urllib.request
+
+    url = "http://tieba.baidu.com/"
+    fileName = 'cookie.txt'
+
+    cookie = http.cookiejar.CookieJar()
+    handler = urllib.request.HTTPCookieProcessor(cookie)
+    opener = urllib.request.build_opener(handler)
+    response = opener.open(url)
+
+    f = open(fileName,'a')
+    for item in cookie:
+        f.write(item.name+" = "+item.value+'\n')
+    f.close()
+    ```
 
 
 ## 2.异常处理
+- URLError: URLError 是 urllib.error 异常类的基类, 可以捕获由urllib.request 产生的异常。
 
+它具有一个属性reason，即返回错误的原因
 
+```
+import urllib.request
+import urllib.error
+
+url = "http://www.google.com"
+try:
+    response = request.urlopen(url)
+except error.URLError as e:
+    print(e.reason)
+```
+
+- HTTPError: 是 UEKRrror 的子类，专门处理 HTTP 和 HTTPS 请求的错误。它具有三个属性。 
+  - 1)code：HTTP 请求返回的状态码。 
+  - 2)renson：与父类用法一样，表示返回错误的原因。 
+  - 3)headers：HTTP 请求返回的响应头信息。
+  
+获取 HTTP 异常的示例代码, 输出了错误状态码、错误原因、服务器响应头
+```
+import urllib.request
+import urllib.error
+
+url = "http://www.google.com"
+try:
+    response = request.urlopen(url)
+except error.HTTPError as e:
+   print('code: ' + e.code + '\n')
+   print('reason: ' + e.reason + '\n')
+   print('headers: ' + e.headers + '\n')
+```
 
 
 ## 3.解析链接
+- 1.urlparse()：url 的识别和分段
+```
+import urllib.request
+import urllib.parse
+url = "http://www.baidu.com"
+parsed = urllib.parse.urlparse(url)
+print(parsed)
+#输出：ParseResult(scheme='http', netloc='www.baidu.com', path='', params='', query='', fragment='')
+```
+
+- 2.urlunparse()： 实现 url 的构造，参数长度必须为 6 ，
+```
+data=['http','www.baidu.com','index.html','user','a=6','comment']
+
+print(urlunparse(data))
+
+这样就完成了urlstring的构造
+```
+
+
+- 3.urlsplit()：url 解析，不单独解析 params 这一部分，只返回 5 个结果
+```
+urlsplict把urlstirng分割成5个部分，其中少了paramters
+
+res=urlsplict('http://www.baidu.com/index.html;user?id=5#comment')
+
+print(res)
+```
+
+
+- 4.urlunsplit()：将链接各个部分组合成完整链接的方法，传入参数也是一个可迭代对象
+```
+
+```
+
+
+- 5.urljoin()：链接的解析，拼合和生成
+```
+import urllib.parse
+url = "http://www.baidu.com"
+new_path = urllib.parse.urljoin(url,"index.html")
+print(new_path)
+#输出：http://www.baidu.com/index.html
+```
+
+
+- 6.urlencode()：将字典类型转化成请求参数
+```
+import urllib.parse
+dic = {'name':'melon','age':18}
+data = urllib.parse.urlencode(dic)
+
+print(data)     #age=18&name=melon
+```
+
+
+- 7.parse_qs()：将请求参数转化成字典
+```
+from urllib.parse import parse_qs
+
+query='wd=query&tn=monline_dg&ie=utf-8'
+
+print(parse_qs(query))
+
+输出结果是：{'tn': ['monline_dg'], 'wd': ['query'], 'ie': ['utf-8']}
+```
+
+
+- 8.parse_qsl()： 将参数转化成元组组成的列表
+```
+from urllib.pase  import parse_qsl：将参数转换成为元组组成的列表
+
+query='wd=query&tn=monline_dg&ie=utf-8'
+
+print(parse_qsl(query))
+
+输出结果：[('wd', 'query'), ('tn', 'monline_dg'), ('ie', 'utf-8')]
+```
+
+
+- 9.quote()： URL 编码
+```
+from urllib。parse import quote
+
+keyword='美女'
+
+url='https://www.baidu.com/s?wd='+quote(keyword)
+
+print(url)
+
+输出结果：https://www.baidu.com/s?wd=%E7%BE%8E%E5%A5%B3
+```
+
+
+- 10.unquote():  URL 解码
+```
+rom urllib.parse import unquote
+
+url='https://www.baidu.com/s?wd=%E7%BE%8E%E5%A5%B3'
+
+print(unquote(url))
+
+输出结果：https://www.baidu.com/s?wd=美女
+```
+
+
+
 
 
 
