@@ -115,6 +115,8 @@
 
 - 3.django
   - GitHub：https://github.com/django/django
+  - windows-install: https://docs.djangoproject.com/zh-hans/2.0/howto/windows/
+  - 
 
 
 ## 6.APP 爬取相关库安装
