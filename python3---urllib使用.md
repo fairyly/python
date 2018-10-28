@@ -36,6 +36,64 @@ print(data)
 
   - geturl()：返回请求的url
 
+- Request：
+urllib.request.Request(url, data=None, headers={}, method=None)
+
+使用request（）来包装请求，再通过urlopen（）获取页面。
+
+- 用来包装头部的数据：
+
+  - User-Agent ：这个头部可以携带如下几条信息：浏览器名和版本号、操作系统名和版本号、默认语言
+
+  - Referer：可以用来防止盗链，有一些网站图片显示来源http://***.com，就是检查Referer来鉴定的
+
+  - Connection：表示连接状态，记录Session的状态。
+
+```
+from urllib import request,parse
+
+url = 'http://httpbin.org/post'
+headers = {
+   'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) '
+                  'Chrome/45.0.2454.85 Safari/537.36 115Browser/6.0.3',
+   'Referer': 'http://httpbin.org',
+   'Connection': 'keep-alive'
+}
+dict = {
+  'name': 'grame'
+}
+data = bytes(parse.urlencode(dict),encoding='utf8')
+req = request.Request(url=url, data=data, headers=headers,method='POST')
+page = request.urlopen(req).read()
+page = page.decode('utf-8')
+print(page)
+
+==========================
+返回：
+{
+  "args": {},
+  "data": "",
+  "files": {},
+  "form": {
+    "name": "grame"
+  },
+  "headers": {
+    "Accept-Encoding": "identity",
+    "Connection": "close",
+    "Content-Length": "10",
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Host": "httpbin.org",
+    "Referer": "http://httpbin.org",
+    "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36 115Browser/6.0.3"
+  },
+  "json": null,
+  "origin": "223.93.186.244",
+  "url": "http://httpbin.org/post"
+}
+
+
+```
+
 
 
 ## 参考
