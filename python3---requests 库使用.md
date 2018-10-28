@@ -232,6 +232,16 @@ def main():
     
 main()
 
+
+================================
+
+# 写入文件
+import json # 需要引入 json 库
+
+def write_to_file(content):
+    with open('result.txt', 'a', encoding='utf-8') as f:
+        f.write(json.dumps(content, ensure_ascii=False) + '\n')
+
 ```
 
 ## 参考
