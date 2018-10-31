@@ -12,4 +12,7 @@ python study
 - [Python入门网络爬虫之精华版](https://github.com/lining0806/PythonSpiderNotes)
 - [爬虫集合](https://github.com/facert/awesome-spider)
 - [反爬虫的技术](https://github.com/luyishisi/Anti-Anti-Spider)
--[<<python爬虫开发与项目实战>>书籍配套源码和说明](https://github.com/qiyeboy/SpiderBook)
+- [<<python爬虫开发与项目实战>>书籍配套源码和说明](https://github.com/qiyeboy/SpiderBook)
+- [微信机器人 / 可能是最优雅的微信个人号 API](https://github.com/youfou/wxpy)
+  - [docs: wxpy: 用 Python 玩微信](https://wxpy.readthedocs.io/zh/latest/)
+- [网页版微信API，包含终端版微信及微信机器人](https://github.com/Urinx/WeixinBot)
