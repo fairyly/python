@@ -67,6 +67,7 @@ with open('data.json','w') as file:
 
 ## csv文件存储
 - 写入
+  - 可以传入 delimiter 分隔符，如： `csv.writer(csvfile,delimiter=' ')`
 ```
 import csv
 
