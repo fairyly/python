@@ -76,6 +76,85 @@ with open('data.csv','w') as csvfile:
   writer.writerow(['id','name','age'])
   writer.writerow(['1001','mike',12])
 ```
+- 字典写入
+```
+import csv
+
+with open('data.csv','w') as csvfile:
+  filenames = ['id','name','age']
+  writer = csv.DictWriter(csvfile,filenames=filenames)
+  writer.writeheader()
+  writer.writerow(['id','name','age'])
+  writer.writerow(['1001','mike',12])
+```
+
+- 读取 csv
+```
+## 读取
+
+with open('data.csv','r',encoding='utf-8') as csvfile:
+  reader = csv.reader(csvfile)
+  for row in reader:
+    print(row)
+```
+
+
+
+## 关系数据库存储--- mysql（已安装pymysql）
+- 连接数据库
+
+```
+import pymysql
+
+db = pymysql.connect(host='localhost',user='root',password='root',port=3306)
+cursor = db.cursor()
+cursor.execute('select version()')
+data = cursor.fetchone()
+print('database version:',data)
+cursor.execute('create database spiders default character set utf8')
+db.close()
+```
+- 创建表
+```
+sql = 'create table if not exists students(id varchar(255) not null,name varchar(255) not null,age int not null,primary key (id))'
+cursor.execute(sql)
+db.close()
+```
+
+- 插入数据
+
+```
+sql = 'insert into students(id,user,age) values(%s, %s ,%s)'
+
+try:
+  cursor.execute(sql)
+  db.commit()
+except:
+  db.rollback()
+db.close()
+```
+
+- 更新数据
+
+- 删除数据
+
+- 查询数据
+
+
+
+## 非关系数据库存储--- MongoDB(已安装pymongo)
+
+非关系数据库细分：
+- 键值存储数据库： redis， Voldmort oracle BDB
+- 列存储数据库： Cassandra,HBase, Riak
+- 文档型数据库：代表有 CouchDB, MongoDB
+- 图形数据库：Neo4j,InfoGrid, Infinite Graph
+
+
+
+## redis 存储(已安装redis 和 redis-py)
+
+
 
 ## 参考
 - 
