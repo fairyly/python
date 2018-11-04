@@ -1,4 +1,4 @@
-# python3---1.1.3 XPath解析库使用
+# python3---1.1.3 lxml解析库使用
 
 用正则提取页面的信息还是比较繁琐，不方便，
 
@@ -45,4 +45,4 @@ print(result)
 
 
 ## 参考
-- 
+- [Github-lxml](https://github.com/lxml/lxml)
