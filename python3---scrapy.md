@@ -46,12 +46,12 @@ class BooksSpider(scrapy.Spider):
 
   # 定义爬虫的起始点，可以有多个，这里只有一个
   start_urls = ['http://books.toscrape.com/']
-  def start_requests(self):
-    urls = [
-        'http://books.toscrape.com/'
-    ]
-    for url in urls:
-        yield scrapy.Request(url=url, callback=self.parse)
+  # def start_requests(self):
+  #  urls = [
+  #      'http://books.toscrape.com/'
+  #  ]
+  #  for url in urls:
+  #      yield scrapy.Request(url=url, callback=self.parse)
 
   #
   def parse(self,response):
