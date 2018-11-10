@@ -29,8 +29,66 @@
 
 ## demo 
 
+- 1.创建项目，输入 shell 命令
+```
+  scrapy startproject scrapyDemo
+```
 
+- 2.创建文件，在项目目录 scrapyDemo/spiders下新建文件  `book_spide.py`
+```
+# scrapyDemo/spiders/book_spide.py
 
+import scrapy
+
+class BooksSpider(scrapy.Spider):
+  # 每个爬虫的唯一标识
+  name = "books"
+
+  # 定义爬虫的起始点，可以有多个，这里只有一个
+  start_urls = ['http://books.toscrape.com/']
+  def start_requests(self):
+    urls = [
+        'http://books.toscrape.com/'
+    ]
+    for url in urls:
+        yield scrapy.Request(url=url, callback=self.parse)
+
+  #
+  def parse(self,response):
+    # 提取数据
+    # 每一本书的信息在 <article class="product_pod"></article>中
+    # 使用 css() 方法找到这样的元素，依次迭代
+    for book in response.css('article.product_pod'):
+      # 书名信息在的元素 h3 > a 的 title 
+      name = book.xpath('./h3/a/@title').extract_first()
+
+      # 书价信息所在元素 <p class="price_color">£33.34</p>
+      price = book.css('p.price_color::text').extract_first()
+
+      yield {
+        'name': name,
+        'price': price,
+      }
+    # 提取链接
+    # 下一页链接在 的元素  <li class="next"><a href="catalogue/page-2.html">next</a></li>
+    
+    next_url = response.css('ul.page li.next a::attr(href)').extract_first()
+    if next_url:
+      # 如果找到下一页的 url,得到绝对路径，构造新的 request 对象
+      next_url = response.urljoin(next_url)
+      yield scrapy.Request(next_url,callback=self.parse) 
+```
+
+- 3. 执行爬虫，保存爬到的数据到 book.csv
+```
+  scrapy crawl books -o books.csv
+```
+  - 遇到的问题: 找不到 `pywin32` 模块，又去 [GitHub](https://github.com/mhammond/pywin32/releases) 下载安装
+
+- 查看 爬到的数据,输入 shell 命令
+```
+  sed -n '2,$p' books.csv | cat -n
+```
 
 
 ## 参考
