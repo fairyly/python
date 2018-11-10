@@ -131,6 +131,7 @@
   - twisted: https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted
     - install: python3 -m pip install Twisted-18.9.0-cp37-cp37m-win_amd64.whl
   - pywin32: https://sourceforge.net/projects/pywin32/files/pywin32/
+    - 安装后来找不到模块，去[GitHub](https://github.com/mhammond/pywin32/releases)下载文件有安装的
   - 安装好依赖后 在安装 `python3 -m pip install Scrapy`
 - [pyspider](https://github.com/binux/pyspider)
   - 依赖 phantomjs,需要先安装 
