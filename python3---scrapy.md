@@ -1,6 +1,6 @@
 # scrapy 爬虫框架
 
->需要安装几个依赖后再安装 scrapy， 具体参考 []()
+>需要安装几个依赖后再安装 scrapy， 具体参考 [scrapy 爬虫框架安装](https://github.com/fairyly/python/blob/master/python3%20%E7%88%AC%E8%99%AB%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98%EF%BC%88book%EF%BC%89.md#7%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6)
 
 ## scrapy 命令
 
