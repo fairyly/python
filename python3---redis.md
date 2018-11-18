@@ -65,3 +65,9 @@ print(redis.get('name'))
 # pool = ConnectionPool(host='localhost', port=6379, db=0, password='')
 # redis = StrictRedis(connection_pool=pool)
 ```
+
+
+
+## 参考
+- [Redis-study](https://github.com/fairyly/Redis-study)
+- [Redis 教程](http://www.runoob.com/redis/redis-tutorial.html)
