@@ -123,23 +123,153 @@ db.close()
 
 - 插入数据
 
+>更改操作必须为一个事务，事务的 4 个属性： ACID(原子性，一致性，隔离性，持久性)  
+原子性：比如插入一条数据，要么全部插入，要么都不插入
+
+
 ```
+
 sql = 'insert into students(id,user,age) values(%s, %s ,%s)'
 
+插入、更新、删除这些操作的标准写法：
 try:
   cursor.execute(sql)
   db.commit()
 except:
   db.rollback()
 db.close()
+==================
+
+id="20181118"
+name="fairy"
+age= 27
+sql = 'insert into students(id,name,age) values(%s, %s ,%s)'
+
+try:
+  cursor.execute(sql,(id, name, age))
+  db.commit()
+except:
+  db.rollback()
+db.close()
+
+
+=====================
+如果突然增加字段，上面的写法就不方便了，所以改写一个动态变化的字典
+
+
+data = {
+  'id': '20181119', # id 不能添加重复，不然会插入 fail
+  'name': 'fairy123',
+  'age': 27
+}
+
+table = 'students'
+keys = ', '.join(data.keys())
+values = ', '.join(['%s'] * len(data))
+
+sql = 'insert into {table}({keys}) values ({values})'.format(table=table, keys=keys, values=values)
+
+try:
+  if cursor.execute(sql,tuple(data.values())):
+    print('ok')
+    db.commit()
+except:
+  print('fail')
+  db.rollback()
+db.close()
+
+
 ```
 
 - 更新数据
 
+```
+# sql = 'update students set age = %s where name = %s'
+
+# try:
+#   if cursor.execute(sql,(25,'fairy')):
+#     print('ok')
+#     db.commit()
+# except:
+#   print('fail')
+#   db.rollback()
+# db.close()
+
+
+
+
+# 重复数据去重
+
+data = {
+  'id': '20181119',
+  'name': 'fairy123',
+  'age': 2999
+}
+
+table = 'students'
+keys = ', '.join(data.keys())
+values = ', '.join(['%s'] * len(data))
+
+sql = 'insert into {table}({keys}) values ({values}) on duplicate key update'.format(table=table, keys=keys, values=values)
+
+update = ', '.join([" {key} = %s".format(key=key) for key in data])
+
+sql += update
+
+try:
+  if cursor.execute(sql,tuple(data.values())*2):
+    print('ok')
+    db.commit()
+except:
+  print('fail')
+  db.rollback()
+db.close()
+```
+
 - 删除数据
+
+```
+# 删除数据
+
+table = 'students'
+condition = 'age > 27'
+
+sql = 'delete from {table} where {condition}'.format(table=table,condition=condition)
+
+try:
+  cursor.execute(sql)
+  print('ok')
+  db.commit()
+except:
+  print('fail')
+  db.rollback()
+db.close()
+
+```
 
 - 查询数据
 
+```
+# 查询数据
+
+sql = 'select * from students where age > 20'
+
+try:
+  cursor.execute(sql)
+  print('ok',cursor.rowcount)
+
+  one = cursor.fetchone()
+  print('one',one)
+
+  all = cursor.fetchall()
+  print('all',all,type(all))
+  # db.commit()  # 不需要 commit() 方法
+except:
+  print('fail')
+  db.rollback()
+db.close()
+
+```
 
 
 ## 非关系数据库存储--- MongoDB(已安装pymongo)
@@ -151,10 +281,107 @@ db.close()
 - 图形数据库：Neo4j,InfoGrid, Infinite Graph
 
 
+### 1. 插入
+
+```
+# mongodb 数据库存储
+# 
+# 链接数据库
+
+import pymongo
+
+client = pymongo.MongoClient(host='localhost',port=27017)
+# client = MongoClient('mongodb://localhost:27017/')
+
+# 指定数据库
+db = client.test
+# db= client['test']
+
+# 指定集合
+collection = db.students
+# collection = db['students']
+
+# 插入数据
+student = {
+  'id': '2018111801',
+  'name': 'johns',
+  'age': 23,
+  'gender': 'male'
+}
+
+# insert is deprecated. Use insert_one or insert_many instead.
+result = collection.insert_one(student)
+print(result)
+
+```
+
+
+### 2.查询
+
+```
+
+## 查询
+
+# result = collection.find_one({'name':'john'})
+result = collection.find({'name':'john'})
+
+# 年龄大于 20 
+result = collection.find({'age':{'$gt':20}})
+
+# 正则匹配,查询名字以 M 开头的数据
+result = collection.find({'name':{'$regex': '^M.*'}})
+
+# 计数
+result = collection.find({'name':'john'}).count()
+
+# 排序 sort
+result = collection.find().sort('name',pymongo.ASCENDING)
+
+# 偏移  skip() 偏移几个位置
+result = collection.find().sort('name',pymongo.ASCENDING).skip(2)
+
+# 还可以用 limit() 指定要取的结果个数
+result = collection.find().sort('name',pymongo.ASCENDING).skip(2).limit(2)
+
+print(type(result))
+print(result)
+
+```
+
+
+### 3.更新
+```
+# 更新
+
+condition = {'name': 'johns'}
+student = collection.find_one(condition)
+
+student['age'] = 42
+
+# Use replace_one, update_one or update_many instead.
+# result = collection.update_one(condition,student)
+
+# 使用 $set 更新
+result = collection.update_one(condition,{'$set': student})
+print(result)
+
+```
+
+
+
+### 4.删除
+```
+# 删除
+#  remove is deprecated. Use delete_one or delete_many instead.
+result = collection.remove({'name': 'john'})
+print(result)
+```
+
+
 
 ## redis 存储(已安装redis 和 redis-py)
 
 
 
 ## 参考
-- 
+- [【python3 网络爬虫开发实战】]()
