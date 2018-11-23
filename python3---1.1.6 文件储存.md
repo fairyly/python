@@ -449,6 +449,16 @@ print(redis.get('name'))
 
 
 
+## RedisDump
+
+- redis-dump: 用于导出数据
+- redis-load: 用于导入数据
+
+```
+redis-dump -u localhost:6379
+```
+
+
 ### 参考
 - [Redis-study](https://github.com/fairyly/Redis-study)
 - [Redis 教程](http://www.runoob.com/redis/redis-tutorial.html)
