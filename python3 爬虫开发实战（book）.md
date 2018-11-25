@@ -45,6 +45,8 @@
 
 - [aiohttp: 异步的web服务库](https://github.com/aio-libs/aiohttp)
   - [docs](https://docs.aiohttp.org)
+  - 官方还推荐安装如下两个库 个是字符编码检测库 cchardet ，另 加速 DNS 解析库：aiodns
+  - `pip3 install cchardet aiodns` 或 `python3 -m pip install cchardet aiodns`
 
 ## 2.解析库安装
 - [lxml:python 解析库，支持 html 和 xml,支持 xpath 解析方式](https://github.com/lxml/lxml)
