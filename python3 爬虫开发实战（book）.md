@@ -31,6 +31,37 @@
   - [chromedriver 驱动下载地址](http://chromedriver.storage.googleapis.com/index.html)
   - [chrome所有版本驱动](http://npm.taobao.org/mirrors/chromedriver/)
   - 环境变量配置：1.将 chromedriver.exe文件拖到 python 到 Script 目录下，也可以单独将所在路径配置到环境变量
+    ```
+      当然，也可以将 hromeDriver 配置到$PATH 首先，可以将可执行文件放到某 目录，目录可以
+      任意选择，例如将当前可执行文件放在／ sr/local/chromedri ver 录下，接下来可以修改～／ profile 文件，
+      相关命令如下
+      export PATH=” $PATH:/usr/local/chromedriver"
+      保存后执行如下命令：
+      source -I. profile
+      即可完成环境变量的添加
+    ```
+
+- 验证安装： 配置完成后，就可以在命令行下直接执行 chromedriver 命令了：
+  ```
+    chromedriver
+    
+    如果出现
+    C:\Users\fairy>chromedriver
+    Starting ChromeDriver 70.0.3538.97 (d035916fe243477005bc95fe2a5778b8f20b6ae1) on port 9515
+    Only local connections are allowed.
+  ```
+
+- 随后再在程序中测 Python 代码：
+```
+from selenium import webdriver
+browser = webdriver.Chrome()
+```
+
+运行之后 如果弹出一个空 Chrome 浏览器，则证明所有的配置都没有问题，如果没有弹出，    
+请检查之前的配置  
+
+如果弹出后闪退，则可能 ChromeDriver 版本和 Chrome 版本不兼容 ，请更换 ChromeDriver    
+如果没有问题，接下来就可以利用 Chrome 来做网页抓取了
 
 - 如果驱动火狐浏览器就需要 GeckoDriver 安装
   - github: https://github.com/mozilla/geckodriver
