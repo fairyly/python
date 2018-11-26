@@ -27,6 +27,7 @@
 所以就可以以这种对应关系推断出自己版本对应的Driver。
 
   - 驱动浏览器完成相应的操作
+  - [chromedriver/downloads](https://sites.google.com/a/chromium.org/chromedriver/downloads)
   - [chromedriver 驱动下载地址](http://chromedriver.storage.googleapis.com/index.html)
   - [chrome所有版本驱动](http://npm.taobao.org/mirrors/chromedriver/)
   - 环境变量配置：1.将 chromedriver.exe文件拖到 python 到 Script 目录下，也可以单独将所在路径配置到环境变量
