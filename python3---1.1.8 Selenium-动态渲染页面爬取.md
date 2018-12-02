@@ -193,3 +193,33 @@ except NoSuchElementException:
 finally:
   browser.close()
 ```
+
+
+
+## splash 使用
+
+```
+利用 Splash ，我们可以实现如下功能：
+1.异步方式处理多个网页渲染过程
+2.获取渲染后的页面的源代码或截图；
+3.通过关闭图片渲染或者使用 Adblock 规则来加快页面渲染速度；
+4.可执行特定的 JavaScript 脚本；
+5.可通过 Lua 脚本来控制页面渲染过程；
+6.获取渲染的详细过程并通过 HAR ( HTTP Archive ）格式呈现
+```
+
+- 第一章中看到 docker 中安装的：支持 win10 专业版、企业版、教育版下才能安装
+  - doc: https://docs.docker.com/docker-for-windows/
+  - windows/docker-toolbox/： http://mirrors.aliyun.com/docker-toolbox/windows/docker-toolbox/
+
+  - 首先，让我们通过下面的命令来检查Docker的安装是否正确：
+
+  `docker info`
+
+  如果没有找到此命令，则表示Docker没有正确安装。
+
+  所有Docker命令可以用以下命令查看：
+
+  `docker help`
+
+  - [win10家庭版安装Docker](https://blog.csdn.net/hao_kkkkk/article/details/79853752)
