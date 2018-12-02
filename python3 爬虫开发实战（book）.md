@@ -102,7 +102,10 @@ browser = webdriver.Chrome()
   - github: https://github.com/sirfz/tesserocr
   - GitHub： https://github.com/tesseract-ocr/tesseract
   - docs: https://github.com/tesseract-ocr/tesseract/wiki
-  - downloads: https://digi.bib.uni-mannheim.de/tesseract/
+  - tesseract downloads: https://digi.bib.uni-mannheim.de/tesseract/
+    - 我下载的 tesseract-ocr-setup-3.05.01.exe ,下载后双击安装
+    - 接下来 再安装 tesserocr 可，此时直接使用 ip 安装
+      ```pip3 install tesserocr pillow ```
 
 ## 数据库安装
 - 1.MySQL:
