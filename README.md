@@ -18,3 +18,4 @@ python study
 - [网页版微信API，包含终端版微信及微信机器人](https://github.com/Urinx/WeixinBot)
 
 - [Python3 DHT 网络磁力种子采集器](https://github.com/chenjiandongx/magnet-dht)
+- [Python Asyncio 精选资源列表，囊括了网络框架，库，软件等资源](https://github.com/chenjiandongx/awesome-asyncio-cn)
