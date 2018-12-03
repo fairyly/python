@@ -16,3 +16,5 @@ python study
 - [微信机器人 / 可能是最优雅的微信个人号 API](https://github.com/youfou/wxpy)
   - [docs: wxpy: 用 Python 玩微信](https://wxpy.readthedocs.io/zh/latest/)
 - [网页版微信API，包含终端版微信及微信机器人](https://github.com/Urinx/WeixinBot)
+
+- [Python3 DHT 网络磁力种子采集器](https://github.com/chenjiandongx/magnet-dht)
