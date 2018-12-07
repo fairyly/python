@@ -3,6 +3,8 @@ python study
 
 [awesome-remote-job](https://github.com/lukasz-madon/awesome-remote-job)
 
+[pydub](https://github.com/jiaaro/pydub): 可以编辑、修改各种音频文件的 Python 库。
+
 ## 参考
 - [awesome-python](https://github.com/vinta/awesome-python)
 - [Python资源大全中文版](https://github.com/jobbole/awesome-python-cn)
