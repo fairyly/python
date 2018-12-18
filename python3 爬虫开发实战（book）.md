@@ -2,6 +2,8 @@
 
 >python 3
 
+- [gitbook---Python3网络爬虫开发实战](https://germey.gitbooks.io/python3webspider/content/)
+
 - 1.请求库
 - 2.解析库
 - 3.数据库
